@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-8$y66*xmj!y^x67m=fop3czww6*m%0wexk)%zjq922bmd-)lqg
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["8000-borys777-djangoblog14no-5q7xo25g8xr.ws.codeinstitute-ide.net", 
                   '.herokuapp.com']
@@ -90,6 +90,11 @@ WSGI_APPLICATION = 'codestar.wsgi.application'
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://*.codeinstitute-ide.net/",
+    "https://*.herokuapp.com"
+]
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
