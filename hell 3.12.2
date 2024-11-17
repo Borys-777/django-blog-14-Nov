@@ -1,0 +1,13 @@
+[1mdiff --git a/blog/models.py b/blog/models.py[m
+[1mindex 4c42cbe..a18edeb 100644[m
+[1m--- a/blog/models.py[m
+[1m+++ b/blog/models.py[m
+[36m@@ -31,6 +31,8 @@[m [mclass Comment(models.Model):[m
+     body = models.TextField()[m
+     approved = models.BooleanField(default=False)[m
+     created_on = models.DateTimeField(auto_now_add=True)[m
+[32m+[m[32m    # challenge = models.FloatField(default=3.0)[m
+[32m+[m[32m    # challenge = models.SlugField(default='a_slug')[m
+ [m
+ [m
+     class Meta:[m
