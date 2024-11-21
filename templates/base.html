@@ -54,7 +54,8 @@
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page" href="{% url 'account_logout' %}">Logout</a>
+                        <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
+                            href="{% url 'account_logout' %}">Logout</a>
                     </li>
                     {% else %}
                     <li class="nav-item">
@@ -62,10 +63,11 @@
                             href="{% url 'account_signup' %}">Register</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page" href="{% url 'account_login' %}">Login</a>
+                        <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
+                            href="{% url 'account_login' %}">Login</a>
                     </li>
                     {% endif %}
-                    
+
                 </ul>
                 <span class="navbar-text text-muted">
                     adventures of a software developer
@@ -75,16 +77,15 @@
     </nav>
 
     <main class="flex-shrink-0 main-bg">
+        {% if user.is_authenticated %}
+        <p class="text-end m-3">You are logged in as {{ user }}</p>
+        {% else %}
+        <p class="text-end m-3">You are not logged in</p>
+        {% endif %}
 
+        
         {% block content %}
         <!-- Content Goes here -->
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, praesentium dolore hic optio, omnis
-        consequatur, blanditiis quis id aut quibusdam sint maiores laboriosam aliquid dolorem doloremque? Odio, autem?
-        Ea, fugiat?
-
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est veritatis enim nam aliquid, cupiditate similique
-        quibusdam qui rem molestiae rerum repudiandae. Sit reiciendis, minus doloremque quibusdam atque dolorum ad
-        natus.
         {% endblock content %}
 
     </main>
