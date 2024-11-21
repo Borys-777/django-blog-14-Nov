@@ -8,4 +8,7 @@ class AboutAdmin(SummernoteModelAdmin):
 
     summernote_fields = ('content',)
 
+# def __str__(self):
+#     return self.title
+
 # Register your models here.
